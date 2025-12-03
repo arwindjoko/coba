@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Template</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200 min-h-screen">
+  <nav class="bg-gray-800 text-white px-6 py-4 flex justify-between items-center shadow-lg">
+    <div class="font-bold text-xl">My Website</div>
+    <div class="space-x-4">
+      <a href="#home" class="hover:underline">Home</a>
+      <a href="#about" class="hover:underline">About</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+    </div>
+    <button onclick="toggleDarkMode()" class="bg-gray-700 px-3 py-1 rounded">Dark Mode</button>
+  </nav>
+
+  <section id="home" class="p-10 text-center">
+    <h1 class="text-4xl font-bold mb-4">Welcome to the Full Template</h1>
+    <p class="text-lg mb-6">Responsive • Tailwind • Dark Mode • Components</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow">Component 1</div>
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow">Component 2</div>
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow">Component 3</div>
+    </div>
+  </section>
+
+  <section id="about" class="p-10 bg-gray-200 dark:bg-gray-800">
+    <h2 class="text-3xl font-bold mb-4">About</h2>
+    <p class="max-w-2xl">Ini adalah template lengkap dengan Tailwind, dark mode, responsive layout, dan komponen siap pakai.</p>
+  </section>
+
+  <section id="contact" class="p-10">
+    <h2 class="text-3xl font-bold mb-4">Contact</h2>
+    <form class="max-w-md space-y-4">
+      <input class="w-full p-2 rounded bg-white dark:bg-gray-700" placeholder="Name" />
+      <input class="w-full p-2 rounded bg-white dark:bg-gray-700" placeholder="Email" />
+      <textarea class="w-full p-2 rounded bg-white dark:bg-gray-700" rows="4" placeholder="Message"></textarea>
+      <button class="bg-blue-600 px-4 py-2 rounded text-white">Send</button>
+    </form>
+  </section>
+
+  <footer class="text-center py-6 text-gray-500 dark:text-gray-400">
+    © 2025 Full Template — All rights reserved.
+  </footer>
+</body>
+</html>
+
